@@ -1,0 +1,8 @@
+pagination-controls{
+    text-align: center;
+    color: #000;
+  }
+  
+  .ngx-pagination .current {
+    background: #e76f51 !important;
+  }

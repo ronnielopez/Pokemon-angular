@@ -1,0 +1,22 @@
+<div class="my-5">
+  <div class="row">
+    <div class="col-sm-12 col-md-6 col-lg-4" 
+    *ngFor="let pokemon of pokemons | paginate: { itemsPerPage: 3, currentPage: page, totalItems: totalPokemons }">
+      <!-- card -->
+      <div class="contenedor my-5">
+        <div class="card">
+          <div class="imgBx">
+            <img [src]="pokemon.sprites.front_default">
+          </div>
+          <div class="contentBx">
+            <h2>{{pokemon.name}}</h2>
+            <a>Ver mas</a>
+          </div>
+        </div>
+      </div>
+      <!-- card -->
+    </div>
+  </div>
+
+  
+</div>
