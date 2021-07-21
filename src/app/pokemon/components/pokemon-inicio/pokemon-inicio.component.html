@@ -1,9 +1,10 @@
-<div class="my-5">
+<div class="mt-5">
   <div class="row">
     <div class="col-sm-12 col-md-6 col-lg-4" 
     *ngFor="let pokemon of pokemons | paginate: { itemsPerPage: 3, currentPage: page, totalItems: totalPokemons }">
       <!-- card -->
-      <div class="contenedor my-5">
+      <div [class]="tipos">
+      <div class="contenedor my-4">
         <div class="card">
           <div class="imgBx">
             <img [src]="pokemon.sprites.other['official-artwork'].front_default">
@@ -14,6 +15,7 @@
             [pokemon]='pokemon' ></modal-view>
           </div>
         </div>
+      </div>
       </div>
       <!-- card -->
     </div>

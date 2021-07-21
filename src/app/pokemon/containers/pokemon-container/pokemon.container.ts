@@ -16,6 +16,8 @@ export class PokemonContainer implements OnInit{
 
     totalPokemons: number = 0;
 
+    tipos: any =[];
+
     constructor(private pokemonService: PokemonService){
 
     }
@@ -37,6 +39,7 @@ export class PokemonContainer implements OnInit{
                 //return en pokemon los pokemones
                 this.pokemonService.getInfoPokemon(element.name)
                 .subscribe((resp : any) => {
+                    this.tipos.push(resp.types[0].type.name);
                     this.pokemons.push(resp);
                     
                 });
