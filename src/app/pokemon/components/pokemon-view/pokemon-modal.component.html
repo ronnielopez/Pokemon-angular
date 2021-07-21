@@ -1,0 +1,34 @@
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header back">
+    <h4 class="modal-title" id="modal-basic-title">{{pokemon.name | uppercase}}</h4>
+    <span class="close backbtn" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </span>
+  </div>
+  <div class="modal-body">
+
+    <div class="row">
+
+      <div class="col-sm-12 col-md-6 text-center align-self-center">
+        <img [src]="pokemon.sprites.other['official-artwork'].front_default" height="300">
+      </div>
+
+      <div class="col-sm-12 col-md-6">
+        <h4 class="text-center">Abilities</h4>
+        <div class="card my-2" *ngFor='let ability of abilitiesPokemon'>
+          <div class="card-body">
+            <h5 class="card-title">{{ability.name | uppercase}}</h5>
+            <p class="card-text">{{getDescripcion()}}</p>
+          </div>
+        </div>
+      </div>
+    
+    </div>
+
+  </div>
+  <div class="modal-footer">
+    <span type="button" class="btn btn-outline-dark" (click)="c('Save click')">Save</span>
+  </div>
+</ng-template>
+
+<a (click)="open(content)">Ver más</a>

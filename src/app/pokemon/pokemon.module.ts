@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { PokemonInicioComponent } from './components/pokemon-inicio/pokemon-inicio.component';
+import { PokemonModalViewComponent } from './components/pokemon-view/pokemon-modal.component';
 import { PokemonContainer } from './containers/pokemon-container/pokemon.container';
 import { PokemonRouterModule } from './router/pokemon-router.module';
 
@@ -13,7 +14,8 @@ import { PokemonRouterModule } from './router/pokemon-router.module';
 @NgModule({
   declarations: [
     PokemonInicioComponent,
-    PokemonContainer
+    PokemonContainer,
+    PokemonModalViewComponent
   ],
   imports: [
     BrowserModule,

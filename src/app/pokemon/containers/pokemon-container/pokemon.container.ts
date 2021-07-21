@@ -34,14 +34,17 @@ export class PokemonContainer implements OnInit{
 
             response.results.forEach((element:any) => {
 
+                //return en pokemon los pokemones
                 this.pokemonService.getInfoPokemon(element.name)
                 .subscribe((resp : any) => {
-
                     this.pokemons.push(resp);
-                    console.log(this.totalPokemons);
+                    
                 });
-            
+                
+
             });
+            
+
         });
     }
 }

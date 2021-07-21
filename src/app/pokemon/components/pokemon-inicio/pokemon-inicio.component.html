@@ -6,11 +6,12 @@
       <div class="contenedor my-5">
         <div class="card">
           <div class="imgBx">
-            <img [src]="pokemon.sprites.front_default">
+            <img [src]="pokemon.sprites.other['official-artwork'].front_default">
           </div>
           <div class="contentBx">
-            <h2>{{pokemon.name}}</h2>
-            <a>Ver mas</a>
+            <h2>{{pokemon.name | uppercase}}</h2>
+            <modal-view 
+            [pokemon]='pokemon' ></modal-view>
           </div>
         </div>
       </div>
