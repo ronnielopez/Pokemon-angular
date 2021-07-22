@@ -9,10 +9,12 @@
 
 .grass {
   --bg-color: #2a9d8f;
+  --text-color:#fff;
 }
 
 .fire {
   --bg-color: #e76f51;
+  
 }
 
 .ghost {

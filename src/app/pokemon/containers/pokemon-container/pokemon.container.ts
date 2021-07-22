@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnChanges, OnInit } from "@angular/core";
 import { PokemonService } from "src/app/services/pokemon.service";
 
 
@@ -12,13 +12,14 @@ export class PokemonContainer implements OnInit{
     
     pokemons: any[] = [];
     
-    page = 1;
+    page = 0;
 
     totalPokemons: number = 0;
 
     tipos: any[] =[];
 
     cantidad: number = 3
+
 
     constructor(private pokemonService: PokemonService){
 
@@ -30,16 +31,18 @@ export class PokemonContainer implements OnInit{
 
 
     getPokemones(reset: boolean){
+        if(reset){
+            this.pokemons = [];
+            this.tipos = [];
+            this.page = 0;
+            //console.log(this.totalPokemons);
+        }
         this.pokemonService
         .getPokemones(this.cantidad , this.page)
         .subscribe((response:any) => {
-            //contando los pokemones enviados
+            //contando los pokemones enviado
             this.totalPokemons = response.count;
-            if(reset){
-                this.pokemons = [];
-                this.tipos = [];
-                console.log('entre');
-            }
+            
             response.results.forEach((element:any) => {
                 
                 //return en pokemon los pokemones
@@ -58,13 +61,12 @@ export class PokemonContainer implements OnInit{
             if(search){
                 this.tipos = [];
                 this.pokemons = [];
-                this.totalPokemons = 1;
             }
+            console.log(this.page);
             this.tipos.push(resp.types[0].type.name);
             this.pokemons.push(resp);
         })
     }
-
 
     
 }

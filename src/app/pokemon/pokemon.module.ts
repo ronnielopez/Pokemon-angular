@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { NotFoundComponent } from '../not-found/not-found.component';
 
 //Componentes
 import { PokemonInicioComponent } from './components/pokemon-inicio/pokemon-inicio.component';
@@ -21,7 +22,8 @@ import { PokemonRouterModule } from './router/pokemon-router.module';
     PokemonInicioComponent,
     PokemonContainer,
     PokemonModalViewComponent,
-    PokemonSearchComponent
+    PokemonSearchComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

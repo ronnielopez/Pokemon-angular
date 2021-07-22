@@ -1,7 +1,6 @@
-import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
+import { NotFoundComponent } from 'src/app/not-found/not-found.component';
 import { PokemonContainer } from '../containers/pokemon-container/pokemon.container';
 
 
@@ -11,7 +10,8 @@ import { PokemonContainer } from '../containers/pokemon-container/pokemon.contai
 const routes: Routes = [
     {path: 'inicio', children: [
         { path: '', component: PokemonContainer}
-    ]}
+    ]},
+    { path: '**', component: NotFoundComponent }
   ]
 
 @NgModule({

@@ -8,6 +8,7 @@ import { PokemonService } from './services/pokemon.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
+
 @NgModule({
   declarations: [
     AppComponent

@@ -1,7 +1,4 @@
-.grass{
-    --bg-color: #2a9d8f;
-    --text-color: #fff;
-}
+@import url('../pokemon-inicio/pokemon-inicio.component.css');
 
 .back {
     background-color: var(--bg-color);
