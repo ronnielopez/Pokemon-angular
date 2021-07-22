@@ -39,6 +39,21 @@
   --bg-color: #ffc300;
 }
 
+.rock {
+  --bg-color: #99582a;
+}
+
+.bug {
+  --bg-color: #588157;
+}
+
+.poison {
+  --bg-color: #a06cd5;
+}
+
+.ground {
+  --bg-color: #99582a;
+}
 
 .contenedor .card{
   position: relative;

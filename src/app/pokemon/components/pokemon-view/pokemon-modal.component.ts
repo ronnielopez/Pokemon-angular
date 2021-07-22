@@ -15,6 +15,7 @@ export class PokemonModalViewComponent implements OnInit{
     @Input()
     pokemon: any;
 
+
     abilitiesPokemon:any = [];
 
     descripcionAbilities: any = [];

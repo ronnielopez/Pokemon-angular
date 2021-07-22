@@ -16,38 +16,55 @@ export class PokemonContainer implements OnInit{
 
     totalPokemons: number = 0;
 
-    tipos: any =[];
+    tipos: any[] =[];
+
+    cantidad: number = 3
 
     constructor(private pokemonService: PokemonService){
 
     }
 
     ngOnInit(){
-        this.getPokemones();
+        this.getPokemones(false);
     }
 
 
-    getPokemones(){
+    getPokemones(reset: boolean){
         this.pokemonService
-        .getPokemones(3 , this.page + 0)
+        .getPokemones(this.cantidad , this.page)
         .subscribe((response:any) => {
             //contando los pokemones enviados
             this.totalPokemons = response.count;
-
+            if(reset){
+                this.pokemons = [];
+                this.tipos = [];
+                console.log('entre');
+            }
             response.results.forEach((element:any) => {
-
-                //return en pokemon los pokemones
-                this.pokemonService.getInfoPokemon(element.name)
-                .subscribe((resp : any) => {
-                    this.tipos.push(resp.types[0].type.name);
-                    this.pokemons.push(resp);
-                    
-                });
                 
-
+                //return en pokemon los pokemones
+                this.getEspecificPokemon(element.name, false);
+                
             });
             
 
         });
     }
+
+
+    getEspecificPokemon(name: any , search: boolean){
+        this.pokemonService.getInfoPokemon(name)
+        .subscribe((resp:any)=>{
+            if(search){
+                this.tipos = [];
+                this.pokemons = [];
+                this.totalPokemons = 1;
+            }
+            this.tipos.push(resp.types[0].type.name);
+            this.pokemons.push(resp);
+        })
+    }
+
+
+    
 }

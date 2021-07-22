@@ -1,4 +1,4 @@
-import { Component, Input, OnInit} from "@angular/core";
+import { Component, Input, OnChanges, OnInit} from "@angular/core";
 
 
 @Component({
@@ -7,10 +7,10 @@ import { Component, Input, OnInit} from "@angular/core";
     templateUrl:'pokemon-inicio.component.html'
 })
 
-export class PokemonInicioComponent implements OnInit{
+export class PokemonInicioComponent{
 
     @Input()
-    pokemons : any
+    pokemon : any
 
     @Input()
     totalPokemons:number = 0;
@@ -21,17 +21,11 @@ export class PokemonInicioComponent implements OnInit{
     @Input()
     tipos:any;
 
-
-
-    constructor(){ }
-
-    ngOnInit() {
-
-        console.log(this.tipos);
-
-    }   
+    @Input()
+    cantidad:number = 0;
     
+    constructor(){
 
-
+    }
 
 }

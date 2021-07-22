@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, EventEmitter, Output } from "@angular/core";
 
 @Component({
     selector:'pokemon-search',
@@ -8,4 +8,24 @@ import { Component } from "@angular/core";
 
 export class PokemonSearchComponent{
 
+    name:any;
+
+
+    @Output()
+    search : EventEmitter<any> = new EventEmitter<any>();
+
+    @Output()
+    reset : EventEmitter<any> = new EventEmitter<any>();
+
+    constructor(){
+
+    }
+
+    handleSearch(name : any , isValid : any){
+        this.search.emit(name.search);
+    }
+
+    resetear(){
+        this.reset.emit(null);
+    }
 }

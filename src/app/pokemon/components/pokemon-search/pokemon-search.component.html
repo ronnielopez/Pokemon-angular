@@ -1,9 +1,23 @@
-<form class="container">
+<form (ngSubmit)="handleSearch(form.value , form.valid)" #form="ngForm" novalidate>
+    
     <div class="input-group rounded my-5">
-        <input type="search" class="form-control rounded" placeholder="Buscar pokemon" aria-label="Search"
+
+        <input type="text" class="form-control rounded" 
+        name='search'
+        required
+        #search='ngModel'
+        [ngModel]='name'
+        placeholder="Buscar pokemon" 
+        aria-label="Search"
             aria-describedby="search-addon" />
-        <span class="input-group-text btn btn btn-outline-secondary" id="search-addon">
+
+        <button class="input-group-text btn btn btn-outline-secondary" type="submit">
             Buscar
-        </span>
+        </button>
+        <button class="input-group-text btn btn btn-outline-danger" (click)='resetear()'>
+            Reset
+        </button>
+
     </div>
+    
 </form>
