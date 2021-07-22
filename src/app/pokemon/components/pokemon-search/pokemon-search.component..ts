@@ -10,6 +10,8 @@ export class PokemonSearchComponent{
 
     name:any;
 
+    reseteo: boolean = false;
+
 
     @Output()
     search : EventEmitter<any> = new EventEmitter<any>();
@@ -22,10 +24,12 @@ export class PokemonSearchComponent{
     }
 
     handleSearch(name : any , isValid : any){
-        this.search.emit(name.search);
+        this.search.emit(name.search.toLowerCase());
+        this.reseteo = true;
     }
 
     resetear(){
         this.reset.emit(null);
+        this.reseteo = false;
     }
 }

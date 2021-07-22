@@ -65,7 +65,7 @@ export class PokemonContainer implements OnInit{
             console.log(this.page);
             this.tipos.push(resp.types[0].type.name);
             this.pokemons.push(resp);
-        })
+        });
     }
 
     

@@ -14,7 +14,7 @@
         <button class="input-group-text btn btn btn-outline-secondary" type="submit">
             Buscar
         </button>
-        <button class="input-group-text btn btn btn-outline-danger" (click)='resetear()'>
+        <button [disabled]='reseteo == false' class="input-group-text btn btn btn-outline-danger" (click)='resetear()'>
             Reset
         </button>
 
