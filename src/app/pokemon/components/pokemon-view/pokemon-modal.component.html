@@ -1,5 +1,6 @@
-<ng-template #content let-c="close" let-d="dismiss">
-  <div class="modal-header back grass">
+<ng-template #content let-c="close" let-d="dismiss" let-i='index'>
+  <div >
+  <div [class]="'modal-header back ' + tipo[0]">
     <h4 class="modal-title" id="modal-basic-title">{{pokemon.name | uppercase}}</h4>
     <span class="close backbtn" aria-label="Close" (click)="d('Cross click')">
       <span aria-hidden="true">&times;</span>
@@ -13,14 +14,14 @@
         <img [src]="pokemon.sprites.other['official-artwork'].front_default" height="300">
       </div>
 
-      <div class="col-sm-12 col-md-6 grass text-center">
+      <div [class]="'col-sm-12 col-md-6 ' + tipo[0] + ' text-center'">
         <h3>Stats :</h3>
         <div *ngFor='let stats of pokemon.stats' class="centrar">
           <p class="stats">{{stats.stat.name | uppercase}}: {{stats.base_stat}}</p>
         </div>
       </div>
 
-      <div class="grass col-sm-12 col-md-12">
+      <div [class]="tipo[0] + ' col-sm-12 col-md-12'">
         <h4 class="text-center">Abilities</h4>
         <div class="card my-2" *ngFor='let ability of abilitiesPokemon'>
           <div class="card-body">
@@ -37,6 +38,7 @@
 
   </div>
   <div class="modal-footer">
+  </div>
   </div>
 </ng-template>
 

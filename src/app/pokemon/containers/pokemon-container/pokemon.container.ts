@@ -37,6 +37,7 @@ export class PokemonContainer implements OnInit{
             this.page = 0;
             //console.log(this.totalPokemons);
         }
+        //obtiene los nombres de los pokemons
         this.pokemonService
         .getPokemones(this.cantidad , this.page)
         .subscribe((response:any) => {
@@ -58,11 +59,12 @@ export class PokemonContainer implements OnInit{
     getEspecificPokemon(name: any , search: boolean){
         this.pokemonService.getInfoPokemon(name)
         .subscribe((resp:any)=>{
+            //esto reinicia el arreglo cuando se quiera hacer una busqueda
             if(search){
                 this.tipos = [];
                 this.pokemons = [];
             }
-            console.log(this.page);
+            //console.log(this.page);
             this.tipos.push(resp.types[0].type.name);
             this.pokemons.push(resp);
         });

@@ -8,11 +8,8 @@ import { PokemonContainer } from '../containers/pokemon-container/pokemon.contai
 
 
 const routes: Routes = [
-    {path: 'inicio', children: [
-        { path: '', component: PokemonContainer}
-    ]},
-    { path: '**', component: NotFoundComponent }
-  ]
+  { path: '', component: PokemonContainer }
+]
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

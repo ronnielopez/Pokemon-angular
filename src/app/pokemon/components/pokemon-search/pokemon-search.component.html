@@ -7,12 +7,12 @@
         required
         #search='ngModel'
         [ngModel]='name'
-        placeholder="Buscar pokemon" 
+        placeholder="Search pokemon" 
         aria-label="Search"
             aria-describedby="search-addon" />
 
         <button class="input-group-text btn btn btn-outline-secondary" type="submit">
-            Buscar
+            Search
         </button>
         <button [disabled]='reseteo == false' class="input-group-text btn btn btn-outline-danger" (click)='resetear()'>
             Reset

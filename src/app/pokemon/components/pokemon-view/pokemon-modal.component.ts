@@ -15,6 +15,9 @@ export class PokemonModalViewComponent implements OnInit{
     @Input()
     pokemon: any;
 
+    @Input()
+    tipo: any;
+
 
     abilitiesPokemon:any = [];
 
@@ -34,8 +37,9 @@ export class PokemonModalViewComponent implements OnInit{
 
       ngOnInit(){
         this.getFilterAbility();
+        console.log(this.tipo);
       }
-
+      //Este filtro seria para obtener la descripcion de las habilidades de un pokemon en especifico
       getFilterAbility(){
         for(let element of this.pokemon.abilities){
           
@@ -56,12 +60,13 @@ export class PokemonModalViewComponent implements OnInit{
         }
       }
 
-
+      //loop para obtener la descripcion
       getDescripcion(){
         for(let ele of this.descripcionAbilities){
           return ele;
         }
       }
 
+      
 
 }

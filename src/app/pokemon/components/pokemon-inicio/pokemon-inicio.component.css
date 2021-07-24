@@ -14,47 +14,57 @@
 
 .fire {
   --bg-color: #e76f51;
-  
+  --text-color:#fff;
 }
 
 .ghost {
   --bg-color: #003049;
+  --text-color:#fff;
 }
 
 .steel {
   --bg-color: #8d99ae;
+  --text-color:#fff;
 }
 
 .water {
   --bg-color: #00b4d8;
+  --text-color:#fff;
 }
 
 .normal {
   --bg-color: #cb997e;
+  --text-color:#fff;
 }
 
 .dragon {
   --bg-color: #6930c3;
+  --text-color:#fff;
 }
 
 .electric {
   --bg-color: #ffc300;
+  --text-color:#fff;
 }
 
 .rock {
   --bg-color: #99582a;
+  --text-color:#fff;
 }
 
 .bug {
   --bg-color: #588157;
+  --text-color:#fff;
 }
 
 .poison {
   --bg-color: #a06cd5;
+  --text-color:#fff;
 }
 
 .ground {
   --bg-color: #99582a;
+  --text-color:#fff;
 }
 
 .contenedor .card{

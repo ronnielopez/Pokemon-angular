@@ -22,12 +22,12 @@ export class PokemonSearchComponent{
     constructor(){
 
     }
-
+    //manda el evento con el nombre en minuscula
     handleSearch(name : any , isValid : any){
         this.search.emit(name.search.toLowerCase());
         this.reseteo = true;
     }
-
+    //solo activa la funcion principal en el container. "getPokemones(true)"
     resetear(){
         this.reset.emit(null);
         this.reseteo = false;

@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { PokemonModule } from './pokemon/pokemon.module';
 import { PokemonService } from './services/pokemon.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CommonModule } from '@angular/common';
 
 
 
@@ -15,6 +16,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
     PokemonModule,
     NgbModule

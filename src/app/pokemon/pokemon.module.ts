@@ -26,7 +26,6 @@ import { PokemonRouterModule } from './router/pokemon-router.module';
     NotFoundComponent
   ],
   imports: [
-    BrowserModule,
     HttpClientModule,
     CommonModule,
     FormsModule,
