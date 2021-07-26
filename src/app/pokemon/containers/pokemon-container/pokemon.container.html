@@ -7,9 +7,11 @@
       <div class="col-sm-12 col-md-6 col-lg-4"
         *ngFor="let pokemon of pokemons
         | paginate: { itemsPerPage: cantidad, currentPage: page, totalItems: totalPokemons }">
-        
-        <pokemon-inicio [pokemon]='pokemon' [totalPokemons]='totalPokemons' [page]='page' [tipos]='tipos'
+         
+
+          <pokemon-inicio [pokemon]='pokemon' [totalPokemons]='totalPokemons' [page]='page'
           [cantidad]='cantidad'></pokemon-inicio>
+        
 
       </div>
     </div>
@@ -18,7 +20,7 @@
 
   <div class="row">
     <div class="col">
-      <pagination-controls (pageChange)="page = $event; pokemons = []; tipos = []; getPokemones(false);"></pagination-controls>
+      <pagination-controls (pageChange)="page = $event; pokemons = []; getPokemones(false);"></pagination-controls>
     </div>
   </div>
 

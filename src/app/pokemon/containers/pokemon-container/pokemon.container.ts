@@ -9,16 +9,18 @@ import { PokemonService } from "src/app/services/pokemon.service";
 })
 
 export class PokemonContainer implements OnInit{
-    
+    //los pokemones
     pokemons: any[] = [];
-    
+    //current page de la paginacion
     page = 0;
-
+    //numero total de pokemones
     totalPokemons: number = 0;
 
-    tipos: any[] =[];
+    //cantidad de pokemon que se muestran
+    cantidad: number = 3;
 
-    cantidad: number = 3
+
+
 
 
     constructor(private pokemonService: PokemonService){
@@ -33,7 +35,6 @@ export class PokemonContainer implements OnInit{
     getPokemones(reset: boolean){
         if(reset){
             this.pokemons = [];
-            this.tipos = [];
             this.page = 0;
             //console.log(this.totalPokemons);
         }
@@ -61,11 +62,10 @@ export class PokemonContainer implements OnInit{
         .subscribe((resp:any)=>{
             //esto reinicia el arreglo cuando se quiera hacer una busqueda
             if(search){
-                this.tipos = [];
+
                 this.pokemons = [];
             }
             //console.log(this.page);
-            this.tipos.push(resp.types[0].type.name);
             this.pokemons.push(resp);
         });
     }

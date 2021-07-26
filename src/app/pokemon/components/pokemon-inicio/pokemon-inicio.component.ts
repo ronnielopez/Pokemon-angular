@@ -19,9 +19,6 @@ export class PokemonInicioComponent{
     page:number = 0;
 
     @Input()
-    tipos:any;
-
-    @Input()
     cantidad:number = 0;
     
     constructor(){

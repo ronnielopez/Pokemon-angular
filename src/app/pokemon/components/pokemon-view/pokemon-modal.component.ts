@@ -37,7 +37,7 @@ export class PokemonModalViewComponent implements OnInit{
 
       ngOnInit(){
         this.getFilterAbility();
-        console.log(this.tipo);
+        //console.log(this.tipo);
       }
       //Este filtro seria para obtener la descripcion de las habilidades de un pokemon en especifico
       getFilterAbility(){

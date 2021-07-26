@@ -1,5 +1,5 @@
       <!-- card -->
-    <div [class]="tipos">
+    <div [class]="pokemon.types[0].type.name">
       <div class="contenedor my-4">
         <div class="card">
           <div class="imgBx">
@@ -8,7 +8,7 @@
           <div class="contentBx">
             <h2>{{pokemon.name | uppercase}}</h2>
             <modal-view 
-            [pokemon]='pokemon' [tipo]='tipos' ></modal-view>
+            [pokemon]='pokemon' [tipo]='pokemon.types[0].type.name' ></modal-view>
           </div>
         </div>
       </div>
