@@ -1,4 +1,4 @@
-import { Component, OnChanges, OnInit } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { PokemonService } from "src/app/services/pokemon.service";
 
 
@@ -19,7 +19,8 @@ export class PokemonContainer implements OnInit{
     //cantidad de pokemon que se muestran
     cantidad: number = 3;
 
-
+    //valores de pagination
+    responsive: boolean = true;
 
 
 
@@ -31,7 +32,7 @@ export class PokemonContainer implements OnInit{
         this.getPokemones(false);
     }
 
-
+    //Obtiene todos los pokemones que cargan al inicio
     getPokemones(reset: boolean){
         if(reset){
             this.pokemons = [];
@@ -43,7 +44,7 @@ export class PokemonContainer implements OnInit{
         .getPokemones(this.cantidad , this.page)
         .subscribe((response:any) => {
             //contando los pokemones enviado
-            this.totalPokemons = response.count;
+            this.totalPokemons = response.count; 
             
             response.results.forEach((element:any) => {
                 
@@ -56,7 +57,7 @@ export class PokemonContainer implements OnInit{
         });
     }
 
-
+    //retorna un pokemon en especifico y lo guarda en un arreglo
     getEspecificPokemon(name: any , search: boolean){
         this.pokemonService.getInfoPokemon(name)
         .subscribe((resp:any)=>{
@@ -69,6 +70,8 @@ export class PokemonContainer implements OnInit{
             this.pokemons.push(resp);
         });
     }
+
+   
 
     
 }

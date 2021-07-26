@@ -9,8 +9,7 @@
         | paginate: { itemsPerPage: cantidad, currentPage: page, totalItems: totalPokemons }">
          
 
-          <pokemon-inicio [pokemon]='pokemon' [totalPokemons]='totalPokemons' [page]='page'
-          [cantidad]='cantidad'></pokemon-inicio>
+          <pokemon-inicio [pokemon]='pokemon'></pokemon-inicio>
         
 
       </div>
@@ -20,7 +19,7 @@
 
   <div class="row">
     <div class="col">
-      <pagination-controls (pageChange)="page = $event; pokemons = []; getPokemones(false);"></pagination-controls>
+      <pagination-controls [directionLinks]="true"  [responsive]="responsive" (pageChange)="page = $event; pokemons = []; getPokemones(false);"></pagination-controls>
     </div>
   </div>
 

@@ -8,18 +8,9 @@ import { Component, Input, OnChanges, OnInit} from "@angular/core";
 })
 
 export class PokemonInicioComponent{
-
+    //variable mandada por el container que solo es un pokemon
     @Input()
     pokemon : any
-
-    @Input()
-    totalPokemons:number = 0;
-
-    @Input()
-    page:number = 0;
-
-    @Input()
-    cantidad:number = 0;
     
     constructor(){
 

@@ -11,25 +11,25 @@ import { PokemonService } from "src/app/services/pokemon.service";
 })
 
 export class PokemonModalViewComponent implements OnInit{
-
+    //variable mandada desde el componente de pokemon-inicio que es el pokemon individual
     @Input()
     pokemon: any;
-
+    //variable mandada desde el componente de pokemon-inicio que es el tipo del pokemon
     @Input()
     tipo: any;
 
-
+    //variable que va a almacenar las habilidades de un pokemon especifico
     abilitiesPokemon:any = [];
-
+    //variable que va a almacenar la descripcion de las habilidades de un pokemon especifico
     descripcionAbilities: any = [];
     
 
     constructor(config: NgbModalConfig, private modalService: NgbModal, private pokeService: PokemonService) {
-        // customize default values of modals used by this component tree
+        // customize default values of modals used by this component tree -- modal
         config.backdrop = 'static';
         config.keyboard = false;
       }
-    
+      //funcion para abrir el modal
       open(content : any) {
         this.modalService.open(content, { size: 'lg' });
         
